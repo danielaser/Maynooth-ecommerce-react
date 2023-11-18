@@ -3,6 +3,7 @@ import { Badge } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import { mobile, tablet } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 70px;
@@ -114,16 +115,36 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>MAYNOOTH</Logo>
+          <Link
+            to="/home"
+            style={{ color: "inherit", textDecoration: "inherit" }}
+          >
+            <Logo>MAYNOOTH</Logo>
+          </Link>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
-          <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
-          </MenuItem>
+          <Link
+            to="/register"
+            style={{ color: "inherit", textDecoration: "inherit" }}
+          >
+            <MenuItem>REGISTER</MenuItem>
+          </Link>
+          <Link
+            to="/login"
+            style={{ color: "inherit", textDecoration: "inherit" }}
+          >
+            <MenuItem>SIGN IN</MenuItem>
+          </Link>
+          <Link
+            to="/cart"
+            style={{ color: "inherit", textDecoration: "inherit" }}
+          >
+            <MenuItem>
+              <Badge badgeContent={4} color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </MenuItem>
+          </Link>
         </Right>
       </Wrapper>
     </Container>

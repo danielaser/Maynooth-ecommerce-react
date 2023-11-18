@@ -22,7 +22,8 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-const Products = () => {
+const Products = ({ cat, filters, sort }) => {
+  console.log(cat, filters, sort);
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
